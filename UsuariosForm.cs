@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using static System.Net.WebRequestMethods;
 
 
 namespace ecommercetp1
@@ -14,8 +16,8 @@ namespace ecommercetp1
 {
     public partial class UsuariosForm : Form
     {
-        int filaSeleccionada = -1;
-        // SqlConnection con = new SqlConnection("TU_CONEXION");
+        int idSeleccionado = -1;
+        string conexion = "server=localhost;database=usuarios;user=root;password=;";
 
         public UsuariosForm()
         {
@@ -28,78 +30,177 @@ namespace ecommercetp1
             txtEmail.Text = "";
             txtContraseña.Text = "";
             cbTiendas.SelectedIndex = -1;
-            filaSeleccionada = -1;
+            idSeleccionado = -1;
         }
+
+
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                filaSeleccionada = e.RowIndex;
+                var fila = dgvUsuarios.CurrentRow;
 
-                txtNombre.Text = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtEmail.Text = dgvUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtContraseña.Text = dgvUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cbTiendas.Text = dgvUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
+                idSeleccionado = Convert.ToInt32(fila.Cells["ID"].Value);
+                txtNombre.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                txtEmail.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                txtContraseña.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Contraseña"].Value.ToString();
+                cbTiendas.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Tienda"].Value.ToString();
+            }
+        }
+
+        public void ModificarDatos()
+        {
+            if (idSeleccionado == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un registro de la tabla primero.");
+                return;
+            }
+            using (MySqlConnection conn = new MySqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"UPDATE usuarios_admin SET Nombre = @nom, Tienda = @tie, Contraseña = @pass, Email = @mail WHERE ID = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@nom", txtNombre.Text);
+                        cmd.Parameters.AddWithValue("@tie", cbTiendas.Text);
+                        cmd.Parameters.AddWithValue("@pass", txtContraseña.Text);
+                        cmd.Parameters.AddWithValue("@mail", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("@id", idSeleccionado);
+
+                        int resultado = cmd.ExecuteNonQuery();
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Registro actualizado con éxito.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al modificar: " + ex.Message);
+                }
+            }
+        }
+
+        public void MostrarDatos()
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT * FROM `usuarios_admin`";
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+
+                    DataTable tabla = new DataTable();
+
+                    adapter.Fill(tabla);
+
+                    dgvUsuarios.DataSource = tabla;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
         private void UsuariosForm_Load(object sender, EventArgs e)
         {
-            dgvUsuarios.Columns.Add("Nombre", "Nombre");
-            dgvUsuarios.Columns.Add("Email", "Email");
-            dgvUsuarios.Columns.Add("Password", "Contraseña");
-            dgvUsuarios.Columns.Add("Tienda", "Tienda");
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            dgvUsuarios.Rows.Add(
-                txtNombre.Text,
-                txtEmail.Text,
-                txtContraseña.Text,
-                cbTiendas.Text
-            );
-
-            // ✅ NUEVO: INSERT en MySQL
-            string query = @"INSERT INTO usuarios (Nombre, Email, Contrasena, Tienda) 
-                     VALUES (@nombre, @email, @contrasena, @tienda)";
-
-            using (var conn = ConexionDB.ObtenerConexion())
+            using (MySqlConnection conn = new MySqlConnection(conexion))
             {
-                conn.Open();
-                using (var cmd = new MySqlCommand(query, conn))
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(cbTiendas.Text) ||
+                string.IsNullOrWhiteSpace(txtContraseña.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text))
+
                 {
-                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@contrasena", txtContraseña.Text);
-                    cmd.Parameters.AddWithValue("@tienda", cbTiendas.Text);
-                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Todos los campos son obligatorios");
+                    return;
+                }
+                try
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO usuarios_admin (Nombre, Tienda, Contraseña, Email) VALUES (@Nombre, @Tienda, @Contraseña, @Email)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                        cmd.Parameters.AddWithValue("@Tienda", cbTiendas.Text);
+                        cmd.Parameters.AddWithValue("@Contraseña", txtContraseña.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Usuario guardado correctamente");
+
+                        LimpiarCampos();
+                        MostrarDatos();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
-
-            MessageBox.Show("Usuario guardado correctamente.");
-            LimpiarCampos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (filaSeleccionada >= 0)
+            if (idSeleccionado >= 0)
             {
-                dgvUsuarios.Rows[filaSeleccionada].Cells[0].Value = txtNombre.Text;
-                dgvUsuarios.Rows[filaSeleccionada].Cells[1].Value = txtEmail.Text;
-                dgvUsuarios.Rows[filaSeleccionada].Cells[2].Value = txtContraseña.Text;
-                dgvUsuarios.Rows[filaSeleccionada].Cells[3].Value = cbTiendas.Text;
-
+                ModificarDatos();
                 LimpiarCampos();
+                MostrarDatos();
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (filaSeleccionada >= 0)
+            if (idSeleccionado == -1)
             {
-                dgvUsuarios.Rows.RemoveAt(filaSeleccionada);
-                LimpiarCampos();
+                MessageBox.Show("Por favor, selecciona un registro de la tabla para eliminar.");
+                return;
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM usuarios_admin WHERE ID = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idSeleccionado);
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            MessageBox.Show("Registro eliminado correctamente.");
+
+                            idSeleccionado = -1;
+                            LimpiarCampos();
+                            MostrarDatos();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
+                }
             }
         }
 
@@ -110,7 +211,7 @@ namespace ecommercetp1
 
         private void Actualizar_SQL_Click(object sender, EventArgs e)
         {
-            // ya no se usa
+            MostrarDatos();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,32 +221,28 @@ namespace ecommercetp1
 
         private void Conexion_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            string conexion = "Server=.\\SQLEXPRESS;Database=UsuariosDB;Trusted_Connection=True;TrustServerCertificate=True;";
+            //string conexion = "Server=.\\SQLEXPRESS;Database=UsuariosDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-            using (SqlConnection con = new SqlConnection(conexion))
+            //using (SqlConnection con = new SqlConnection(conexion))
             {
-                string query = @"INSERT INTO Usuarios
-                        (Nombre, Email, Contraseña, Tienda)
-                        VALUES
-                        (@nombre, @email, @contraseña, @tienda)";
+                //string query = @"INSERT INTO Usuarios
+                        //(Nombre, Email, Contraseña, Tienda)
+                        //VALUES
+                        //(@nombre, @email, @contraseña, @tienda)";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                //using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@contraseña", txtContraseña.Text);
-                    cmd.Parameters.AddWithValue("@tienda", cbTiendas.SelectedItem.ToString());
+                    //cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+                    //cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                    //cmd.Parameters.AddWithValue("@contraseña", txtContraseña.Text);
+                    //cmd.Parameters.AddWithValue("@tienda", cbTiendas.SelectedItem.ToString());
 
-                    con.Open();
-                    cmd.ExecuteNonQuery();
+                    //conn.Open();
+                    //cmd.ExecuteNonQuery();
                 }
             }
 
-            MessageBox.Show("Usuario guardado correctamente");
-=======
-            // ya no se usa
->>>>>>> 2db9ecb3699b0fee9794e9f2660aea6b7648fe73
+            //MessageBox.Show("Usuario guardado correctamente");
         }
     }
 }

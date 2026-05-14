@@ -1,34 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\",
+  "WorkspaceRootPath": "G:\\Download\\ecommercetp1-mysql\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|g:\\download\\ecommercetp1-mysql\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|G:\\Download\\ecommercetp1-mysql\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|G:\\Download\\ecommercetp1-mysql\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\formlogistica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:formlogistica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|c:\\users\\pcgamer\\documents\\nueva carpeta (3)\\ecommercetp1-mysql\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|g:\\download\\ecommercetp1-mysql\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F617984-9F38-05FF-7BBB-75AD98BAD246}|ecommercetp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,15 +26,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form1.cs",
+              "DocumentMoniker": "G:\\Download\\ecommercetp1-mysql\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form1.cs",
+              "ToolTip": "G:\\Download\\ecommercetp1-mysql\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAlwFAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -56,78 +44,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuariosForm.cs",
+              "DocumentMoniker": "G:\\Download\\ecommercetp1-mysql\\UsuariosForm.cs",
+              "RelativeDocumentMoniker": "UsuariosForm.cs",
+              "ToolTip": "G:\\Download\\ecommercetp1-mysql\\UsuariosForm.cs",
+              "RelativeToolTip": "UsuariosForm.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAYwNUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T09:28:56.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form4.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form4.cs",
-              "RelativeDocumentMoniker": "Form4.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form4.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Form4.cs [Dise\u00F1o]*",
+              "Title": "UsuariosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "G:\\Download\\ecommercetp1-mysql\\UsuariosForm.cs",
+              "RelativeDocumentMoniker": "UsuariosForm.cs",
+              "ToolTip": "G:\\Download\\ecommercetp1-mysql\\UsuariosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "UsuariosForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T13:24:39.251Z",
+              "WhenOpened": "2026-05-13T12:46:00.939Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form2.cs",
-              "RelativeDocumentMoniker": "Form2.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Form2.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T13:15:55.009Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form3.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form3.cs",
-              "RelativeDocumentMoniker": "Form3.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form3.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Form3.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T13:15:52.799Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormLogistica.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\FormLogistica.cs",
-              "RelativeDocumentMoniker": "FormLogistica.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\FormLogistica.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormLogistica.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T13:15:46.238Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form1.cs",
+              "DocumentMoniker": "G:\\Download\\ecommercetp1-mysql\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\Form1.cs [Dise\u00F1o]",
+              "ToolTip": "G:\\Download\\ecommercetp1-mysql\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-13T12:51:01.146Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UsuariosForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\UsuariosForm.cs",
-              "RelativeDocumentMoniker": "UsuariosForm.cs",
-              "ToolTip": "C:\\Users\\PcGamer\\Documents\\Nueva carpeta (3)\\ecommercetp1-mysql\\UsuariosForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "UsuariosForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T12:46:00.939Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
